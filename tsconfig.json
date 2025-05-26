@@ -1,0 +1,35 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "module": "esnext",
+        "moduleResolution": "Node",
+        "sourceMap": false,
+        "baseUrl": ".",
+        "esModuleInterop": true,
+        "paths": {
+            "@components/*": [
+                "src/components/*"
+            ],
+            "@pages/*": [
+                "src/pages/*"
+            ],
+            "@utils/*": [
+                "src/utils/*"
+            ],
+            "@tests/*": [
+                "tests/*"
+            ]
+        },
+        "strict": true,
+        "experimentalDecorators": true,
+        "useDefineForClassFields": false,
+        "skipLibCheck": true,
+        "types": [
+            "node",
+            "@playwright/test"
+        ]
+    },
+    "include": [
+        "./**/*.ts"
+    ]
+}

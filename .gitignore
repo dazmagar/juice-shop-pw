@@ -1,0 +1,6 @@
+# Playwright generated files
+playwright/.cache/
+reports/
+
+# Node modules
+node_modules/
