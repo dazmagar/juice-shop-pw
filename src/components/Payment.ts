@@ -7,7 +7,7 @@ export class PaymentComponent extends BaseComponent {
     private readonly selectors = {
         walletBalance: 'text=Wallet Balance',
         payButton: 'button:has-text("Pay")',
-        addCardButton: 'button:has-text("Add new card")',
+        addCardButton: 'span:has-text("Add new card")',
         cardRadio: 'mat-radio-button input[type="radio"]',
         proceedToReviewButton: '[aria-label="Proceed to review"]',
     };
@@ -34,8 +34,7 @@ export class PaymentComponent extends BaseComponent {
                 await payButton.click();
                 return;
             }
-            const cardExists =
-                (await this.page.locator(this.selectors.cardRadio).count()) > 0;
+            const cardExists = (await this.page.locator(this.selectors.cardRadio).count()) > 0;
             if (!cardExists) {
                 await this.page.locator(this.selectors.addCardButton).click();
                 await this.paymentMethod.addCard();

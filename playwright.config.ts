@@ -20,7 +20,7 @@ const viewportHeight = parseInt(process.env.VIEWPORT_HEIGHT || '1080', 10);
 
 export default defineConfig({
     testDir: './tests',
-    timeout: 300000,
+    timeout: 20000,
     outputDir: './reports/test-results',
     workers,
     reporter: [

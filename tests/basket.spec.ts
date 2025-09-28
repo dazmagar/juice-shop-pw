@@ -11,10 +11,7 @@ test.describe('Basket Tests', () => {
         allure.tags('Basket');
         allure.severity(allure.Severity.CRITICAL);
 
-        await app.login.auth(
-            process.env.USER_EMAIL ?? 'tester1@test.com',
-            process.env.USER_PASSWORD ?? 'zaq1@WSX',
-        );
+        await app.login.auth(process.env.USER_EMAIL ?? '', process.env.USER_PASSWORD ?? '');
         await app.navBar.verifyBasketVisible();
 
         await app.searchResult.addToBasket('Apple Juice');
