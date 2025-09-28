@@ -3,33 +3,31 @@
     "version": "1.0.0",
     "license": "ISC",
     "type": "module",
-    "dependencies": {
+    "devDependencies": {
         "@playwright/test": "^1.52.0",
         "@types/node": "^20.14.0",
-        "allure-commandline": "^2.34.0",
-        "allure-playwright": "^3.2.1",
-        "cross-env": "^7.0.3",
-        "dotenv": "^16.5.0",
-        "playwright": "^1.50.1",
-        "typescript": "^4.4.4"
-    },
-    "devDependencies": {
         "@typescript-eslint/eslint-plugin": "^7.15.0",
         "@typescript-eslint/parser": "^5.0.1",
+        "allure-commandline": "^2.34.0",
+        "allure-playwright": "3.2.1",
+        "cross-env": "^7.0.3",
+        "dotenv": "^16.5.0",
         "eslint": "^8.52.0",
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-no-inline-styles": "^1.0.5",
         "eslint-plugin-playwright": "^1.6.2",
         "eslint-plugin-prettier": "^5.2.1",
+        "playwright": "^1.50.1",
         "prettier": "^3.1.0",
-        "prettier-eslint": "^16.1.2"
+        "prettier-eslint": "^16.1.2",
+        "typescript": "^4.4.4"
     },
     "scripts": {
         "lint": "eslint . --ext .ts",
         "lint:fix": "eslint . --ext .ts --fix",
-        "test:dev": "cross-env ENV=dev playwright test",
-        "test:headless": "cross-env ENV=prod HEADLESS=true playwright test",
-        "test:grep": "cross-env ENV=prod playwright test --grep=%1",
+        "test:chrome:headed": "cross-env ENV=dev HEADLESS=false playwright test --project=chromium",
+        "test:chrome:headless": "cross-env ENV=dev HEADLESS=true playwright test --project=chromium",
+        "test:chrome:grep": "cross-env ENV=dev HEADLESS=false playwright test --project=chromium --grep",
         "allure:generate": "allure generate ./reports/allure-results -o ./reports/allure-report --clean",
         "allure:open": "allure open ./reports/allure-report",
         "report:playwright": "playwright show-report reports/playwright-report"

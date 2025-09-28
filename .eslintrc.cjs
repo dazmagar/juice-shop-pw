@@ -45,6 +45,7 @@ module.exports = {
             },
         ],
         'playwright/expect-expect': 'off',
+        'playwright/no-wait-for-timeout': 'off',
     },
     ignorePatterns: ['dist', 'node_modules'],
 };

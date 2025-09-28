@@ -23,13 +23,13 @@ export class AddressCreateComponent extends BaseComponent {
     async fillAddressForm(): Promise<void> {
         await allure.step('Fill address form and submit', async () => {
             await this.waitForVisible();
-            await this.fill(this.selectors.countryInput, process.env.USER_COUNTRY || 'Country');
-            await this.fill(this.selectors.nameInput, process.env.USER_NAME || 'Name');
-            await this.fill(this.selectors.mobileInput, process.env.USER_MOBILE || '1234567890');
-            await this.fill(this.selectors.zipInput, process.env.USER_ZIP || '123456');
-            await this.fill(this.selectors.addressInput, process.env.USER_ADDRESS || 'Address');
-            await this.fill(this.selectors.cityInput, process.env.USER_CITY || 'City');
-            await this.fill(this.selectors.stateInput, process.env.USER_STATE || 'State');
+            await this.fill(this.selectors.countryInput, process.env.USER_COUNTRY ?? '');
+            await this.fill(this.selectors.nameInput, process.env.USER_NAME ?? '');
+            await this.fill(this.selectors.mobileInput, process.env.USER_MOBILE ?? '');
+            await this.fill(this.selectors.zipInput, process.env.USER_ZIP ?? '');
+            await this.fill(this.selectors.addressInput, process.env.USER_ADDRESS ?? '');
+            await this.fill(this.selectors.cityInput, process.env.USER_CITY ?? '');
+            await this.fill(this.selectors.stateInput, process.env.USER_STATE ?? '');
             await this.click(this.selectors.submitButton);
         });
     }

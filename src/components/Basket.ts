@@ -25,7 +25,6 @@ export class BasketComponent extends BaseComponent {
 
     async verifyTotalPrice(): Promise<void> {
         await allure.step('Verify total price based on items in the basket', async () => {
-            // eslint-disable-next-line playwright/no-wait-for-timeout
             await this.page.waitForTimeout(500);
             const rows = await this.page.locator('mat-row').all();
             let calculatedTotal = 0;

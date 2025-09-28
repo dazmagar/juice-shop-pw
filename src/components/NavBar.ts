@@ -48,7 +48,6 @@ export class NavBarComponent extends BaseComponent {
         await allure.step(`Submit search for term: ${term}`, async () => {
             await this.enterSearchTerm(term);
             await this.root.locator(this.selectors.searchInput).press('Enter');
-            // eslint-disable-next-line playwright/no-wait-for-timeout
             await this.page.waitForTimeout(500);
         });
     }
@@ -57,7 +56,6 @@ export class NavBarComponent extends BaseComponent {
         await allure.step('Clear search input and press Enter', async () => {
             await this.enterSearchTerm('');
             await this.root.locator(this.selectors.searchInput).press('Enter');
-            // eslint-disable-next-line playwright/no-wait-for-timeout
             await this.page.waitForTimeout(500);
         });
     }

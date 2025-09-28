@@ -302,7 +302,7 @@ allure-js-commons@3.2.1:
   dependencies:
     md5 "^2.3.0"
 
-allure-playwright@^3.2.1:
+allure-playwright@3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/allure-playwright/-/allure-playwright-3.2.1.tgz#47b29d57fda06393cb36716020356d96996a52ed"
   integrity sha512-IO0lDDz007hlaHH8hZzrvyaw0NR6ZOGBEPI/ANUGbBizFOXcDf9J/nHDCdsNrt/Qa13H4AGGU7sDjtng1evYgA==

@@ -26,7 +26,6 @@ export class SearchComponent extends BaseComponent {
                 .first();
             const tile = productLocator.locator('xpath=ancestor::mat-grid-tile');
             await tile.locator(this.selectors.addButton).click();
-            // eslint-disable-next-line playwright/no-wait-for-timeout
             await this.page.waitForTimeout(500);
             await this.navBar.clearSearch();
             await this.navBar.closeSearch();
